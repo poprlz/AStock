@@ -81,8 +81,8 @@ class Stock:
 
 class Trans:
 	def __init__(self, time = '00:00', volume = '0', price = '0', type = 'EQUAL'):
-		self.time = int(time[0:2] + time[3:5])
-		self.volume = int(volume)
+		self.time = int(time.replace(':', '')[0:4])
+		self.volume = int(volume) / 100
 		self.price = float(price)
 		if type == 'DOWN':
 			self.type = -1
