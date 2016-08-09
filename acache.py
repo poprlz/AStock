@@ -11,7 +11,7 @@ dateStr = None # 需要缓存的日期字串
 
 def cacheTransData_(stockCode):
 	try:
-		dataFrame = ts.get_tick_data(stockCode[2:], date=dateStr)
+		dataFrame = ts.get_tick_data(stockCode[2:], date = dateStr, retry_count = 10, pause = 1)
 	except:
 		return None
 	dataArray = dataFrame.values
