@@ -53,11 +53,10 @@ def threadFunction(stockList):
 	for stockCode in stockList:
 		cacheTransData(stockCode)
 
-# 判断是否开启特殊模式
 if len(sys.argv) < 2:
 	print('使用示例: python acache.py 160803')
 	exit(0)
-# 则准备好cache目录
+# 准备好cache目录
 dateStr = sys.argv[1]
 cachePath = os.path.join(sys.path[0], 'cache')
 cachePath = os.path.join(cachePath, dateStr)
